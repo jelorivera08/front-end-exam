@@ -20,7 +20,6 @@ Some other notes:
 * Use React (with hooks) and make your own webpack config
 * You can change anything you want (server stuff included) as long as the above list is completed.
 * This isn't a backend test, don't make it require any databases.
-* If you decide to use a precompiler of any kind (js/css/etc..) we need to be able to run it with `npm run build`.
 * We don't want to run any `npm install -g whatever` commands. **NO GLOBAL DEPENDENCIES**
 * Tests are good.
 * Be practical, but at the same time, show-off your skills here.
@@ -46,7 +45,7 @@ A possible layout could be:
 ```
 $ npm install
 $ npm start
-$ npm run build #[optional] use for any precompilers you choose
+$ npm run build
 ```
 
 ## API endpoints / examples
