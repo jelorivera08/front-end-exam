@@ -15,13 +15,25 @@ We have provided:
 
 > If you need other publicly available files, other than `index.html`, `app.js`, `app.css` you will have to modify the server code in `/index.js`
 
+What I needed to see in this exam
+
+* Don't use create-react-app to create the FE
+* Create your webpack.config
+* If you plan to use CSS, either use `Sass` (compiled using webpack) or `Styled-Components`
+* Use React Hooks
+* While this is a simple test, I would like to see how you would implement redux in this exam
+* Use a middleware in performing async calls. That can either be redux-thunk, redux-observable or redux-saga
+* Create unit test (JEST):
+  * ACTIONS
+  * Reducers
+  * Components
+  * Async Calls
+
 Some other notes:
 * The design, layout, ux, is all up to you.
-* Use React (with hooks) and make your own webpack config
 * You can change anything you want (server stuff included) as long as the above list is completed.
 * This isn't a backend test, don't make it require any databases.
 * We don't want to run any `npm install -g whatever` commands. **NO GLOBAL DEPENDENCIES**
-* Tests are good.
 * Be practical, but at the same time, show-off your skills here.
 
 A possible layout could be:
