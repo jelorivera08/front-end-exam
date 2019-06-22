@@ -1,19 +1,29 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import { hot } from 'react-hot-loader';
 import { connect } from 'react-redux';
+import * as actions from './redux/actions';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <h1> {this.props.count} </h1>
-        <button onClick={() => this.props.dispatch({ type: 'FOO' })}>
-          {' '}
-          boom
-        </button>
-      </div>
-    );
-  }
-}
+const App = ({ counters, getCounters }) => {
+  const AppDidMount = () => {
+    useEffect(() => {
+      getCounters();
+    }, []);
+  };
 
-export default connect((state) => ({ count: state.count }))(hot(module)(App));
+  // render sequence stars
+  AppDidMount();
+  return <div>hello</div>;
+};
+
+const mapStateToProps = (state) => ({
+  counters: state.counters,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  getCounters: () => dispatch(actions.getCounters()),
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(hot(module)(App));

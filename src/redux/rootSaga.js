@@ -1,13 +1,19 @@
 import { put, takeEvery, all } from 'redux-saga/effects';
+import * as constants from '../constants';
+import API from '../api/api';
 
-function* foobar() {
-  yield alert('hello from saga');
+let myAPI = new API(constants.API_URL);
+myAPI.createEntity('counter');
+
+function* getCounters() {
+  let foo = yield myAPI.endpoints.counter.getAll();
+  console.log(foo);
 }
 
-function* watchIncrementAsync() {
-  yield takeEvery('FOO', foobar);
+function* watchGetCounters() {
+  yield takeEvery(constants.GET_COUNTERS, getCounters);
 }
 
 export default function* rootSaga() {
-  yield all([watchIncrementAsync()]);
+  yield all([watchGetCounters()]);
 }
