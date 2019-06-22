@@ -4,7 +4,8 @@
   "description": "Virtual Control front end test",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently 'webpack-dev-server --mode development' 'node index.js'"
+    "start": "concurrently 'webpack-dev-server --mode development' 'node index.js'",
+    "build": "webpack --mode production"
   },
   "keywords": [
     "front-end test"
@@ -12,14 +13,19 @@
   "author": "Virtual Control",
   "license": "ISC",
   "dependencies": {
+    "@hot-loader/react-dom": "^16.8.6",
     "body-parser": "^1.19.0",
     "compression": "^1.7.4",
+    "concurrently": "^4.1.0",
     "express": "^4.17.0",
     "lodash": "^4.17.11",
     "morgan": "^1.9.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-hot-loader": "^4.11.1"
+    "react-hot-loader": "^4.11.1",
+    "react-redux": "^7.1.0",
+    "redux": "^4.0.1",
+    "redux-saga": "^1.0.3"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",

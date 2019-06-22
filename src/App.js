@@ -1,15 +1,19 @@
 import React, { Component } from 'react';
 import { hot } from 'react-hot-loader';
-import './App.css';
+import { connect } from 'react-redux';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1> Hello, World! foo </h1>
+        <h1> {this.props.count} </h1>
+        <button onClick={() => this.props.dispatch({ type: 'FOO' })}>
+          {' '}
+          boom
+        </button>
       </div>
     );
   }
 }
 
-export default hot(module)(App);
+export default connect((state) => ({ count: state.count }))(hot(module)(App));
