@@ -4,7 +4,7 @@
   "description": "Virtual Control front end test",
   "main": "index.js",
   "scripts": {
-    "start" : "node index.js"
+    "start": "concurrently 'webpack-dev-server --mode development' 'node index.js'"
   },
   "keywords": [
     "front-end test"
@@ -16,6 +16,21 @@
     "compression": "^1.7.4",
     "express": "^4.17.0",
     "lodash": "^4.17.11",
-    "morgan": "^1.9.1"
+    "morgan": "^1.9.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-hot-loader": "^4.11.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.0.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.35.0",
+    "webpack-cli": "^3.3.4",
+    "webpack-dev-server": "^3.7.2"
   }
 }
