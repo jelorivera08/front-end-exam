@@ -1,0 +1,24 @@
+.counter-list-contaier {
+  padding: 10px 22px 15px;
+}
+
+.counter-list-unit {
+  display: flex;
+  font-size: 20px;
+  margin: 10px 0px;
+}
+
+.counter-list-unit-title {
+  margin-left: 15px;
+  width: 226%;
+}
+
+.counter-list-unit-func {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.counter-list-unit-del {
+  cursor: pointer;
+}

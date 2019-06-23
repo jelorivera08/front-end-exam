@@ -1,0 +1,30 @@
+body {
+  background-color: #CCCCCC;
+  margin: 0px;
+}
+
+#root {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  font-family: Roboto;
+}
+
+.counter-container {
+  background-color: #fcfccc;
+  margin: auto;
+  width: 30%;
+  max-width: 500px;
+  min-width: 350px;
+  height: 500px;
+  position: relative;
+  border-radius: 20px;
+}
+
+.counter-list-unit-inc {
+  cursor: pointer;
+}
+
+.counter-list-unit-dec {
+  cursor: pointer;
+}

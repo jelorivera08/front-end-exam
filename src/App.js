@@ -2,9 +2,10 @@ import React, { useEffect } from 'react';
 import { hot } from 'react-hot-loader';
 import { connect } from 'react-redux';
 import * as actions from './actions';
-import CounterInput from './Components/CounterInput';
-import CounterList from './Components/CounterList';
-import CounterTotal from './Components/CounterTotal';
+import CounterInput from './Components/CounterInput/CounterInput';
+import CounterList from './Components/CounterList/CounterList';
+import CounterTotal from './Components/CounterTotal/CounterTotal';
+import './App.scss';
 
 const App = ({
   counters,
@@ -29,7 +30,7 @@ const App = ({
   let totalCount = getTotalCount();
 
   return (
-    <div>
+    <div className="counter-container">
       <CounterInput handleCounterSubmit={addACounter} />
       <CounterList
         counters={counters}

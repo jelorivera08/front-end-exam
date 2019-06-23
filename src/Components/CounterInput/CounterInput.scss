@@ -1,0 +1,24 @@
+.counter-input-container {
+  display: flex;
+  margin: 20px 10px 10px;
+}
+
+.counter-input {
+  background: transparent;
+  border: none;
+  border-bottom: 2px black solid;
+  margin: auto;
+  width: 80%;
+  padding: 7px 0px 2px 0px;
+  font-size: 15px;
+}
+
+.counter-input:focus {
+  border-bottom: 2px #ed2412 solid;
+  outline: none;
+}
+
+.counter-add {
+  margin: auto;
+  cursor: pointer;
+}
