@@ -6,16 +6,37 @@ import CounterInput from './Components/CounterInput';
 import CounterList from './Components/CounterList';
 import CounterTotal from './Components/CounterTotal';
 
-const App = ({ counters, getCounters, addACounter, increment }) => {
-  let totalCount = 0;
+const App = ({
+  counters,
+  getCounters,
+  addACounter,
+  increment,
+  decrement,
+  deleteCounter,
+}) => {
   useEffect(() => {
     getCounters();
   }, []);
 
+  const getTotalCount = () => {
+    let tot = 0;
+    counters.forEach((counter) => {
+      tot += counter.count;
+    });
+    return tot;
+  };
+
+  let totalCount = getTotalCount();
+
   return (
     <div>
       <CounterInput handleCounterSubmit={addACounter} />
-      <CounterList counters={counters} handleIncrementClick={increment} />
+      <CounterList
+        counters={counters}
+        handleIncrementClick={increment}
+        handleDecrementClick={decrement}
+        handleDeleteClick={deleteCounter}
+      />
       <CounterTotal totalCount={totalCount} />
     </div>
   );
@@ -29,6 +50,8 @@ const mapDispatchToProps = (dispatch) => ({
   getCounters: () => dispatch(actions.getCounters()),
   addACounter: (counter) => dispatch(actions.addACounter(counter)),
   increment: (id) => dispatch(actions.increment(id)),
+  decrement: (id) => dispatch(actions.decrement(id)),
+  deleteCounter: (id) => dispatch(actions.deleteCounter(id)),
 });
 
 export default connect(

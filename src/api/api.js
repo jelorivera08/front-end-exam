@@ -50,18 +50,7 @@ class API {
             },
           }
         ),
-      delete: (id) =>
-        axios.delete(
-          `${resourceURL}/counter`,
-          {
-            id,
-          },
-          {
-            headers: {
-              'Content-Type': 'application/json',
-            },
-          }
-        ),
+      delete: (id) => axios.delete(`${resourceURL}/counter`, { data: { id } }),
     };
 
     return endpoints;

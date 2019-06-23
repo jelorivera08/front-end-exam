@@ -35,10 +35,32 @@ function* increment(action) {
   }
 }
 
+function* decrement(action) {
+  let res;
+  try {
+    res = yield counterAPI.decrement(action.payload);
+    yield put(actions.success({ payload: res.data }));
+  } catch (err) {
+    console.error('error encountered in getting counters', err);
+  }
+}
+
+function* deleteCounter(action) {
+  let res;
+  try {
+    res = yield counterAPI.delete(action.payload);
+    yield put(actions.success({ payload: res.data }));
+  } catch (err) {
+    console.error('error encountered in getting counters', err);
+  }
+}
+
 function* watchCounterAPIS() {
   yield takeEvery(constants.GET_COUNTERS, getCounters);
   yield takeEvery(constants.ADD_A_COUNTER, addACounter);
   yield takeEvery(constants.INCREMENT, increment);
+  yield takeEvery(constants.DECREMENT, decrement);
+  yield takeEvery(constants.DELETE, deleteCounter);
 }
 
 export default function* rootSaga() {

@@ -26,3 +26,17 @@ export const increment = (id) => {
     payload: id,
   };
 };
+
+export const decrement = (id) => {
+  return {
+    type: constants.DECREMENT,
+    payload: id,
+  };
+};
+
+export const deleteCounter = (id) => {
+  return {
+    type: constants.DELETE,
+    payload: id,
+  };
+};
