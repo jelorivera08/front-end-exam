@@ -6,7 +6,7 @@ import CounterInput from './Components/CounterInput';
 import CounterList from './Components/CounterList';
 import CounterTotal from './Components/CounterTotal';
 
-const App = ({ counters, getCounters, addACounter }) => {
+const App = ({ counters, getCounters, addACounter, increment }) => {
   let totalCount = 0;
   useEffect(() => {
     getCounters();
@@ -15,7 +15,7 @@ const App = ({ counters, getCounters, addACounter }) => {
   return (
     <div>
       <CounterInput handleCounterSubmit={addACounter} />
-      <CounterList counters={counters} />
+      <CounterList counters={counters} handleIncrementClick={increment} />
       <CounterTotal totalCount={totalCount} />
     </div>
   );
@@ -28,6 +28,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   getCounters: () => dispatch(actions.getCounters()),
   addACounter: (counter) => dispatch(actions.addACounter(counter)),
+  increment: (id) => dispatch(actions.increment(id)),
 });
 
 export default connect(

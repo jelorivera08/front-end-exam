@@ -40,7 +40,7 @@ class API {
         ),
       decrement: (id) =>
         axios.post(
-          `${resourceURL}/counter/inc`,
+          `${resourceURL}/counter/dec`,
           {
             id,
           },
@@ -52,7 +52,7 @@ class API {
         ),
       delete: (id) =>
         axios.delete(
-          `${resourceURL}/counter/inc`,
+          `${resourceURL}/counter`,
           {
             id,
           },

@@ -9,7 +9,7 @@ function* getCounters() {
   let res;
   try {
     res = yield counterAPI.getAll();
-    yield put(actions.gotCounters({ payload: res.data }));
+    yield put(actions.success({ payload: res.data }));
   } catch (err) {
     console.error('error encountered in getting counters', err);
   }
@@ -19,7 +19,17 @@ function* addACounter(action) {
   let res;
   try {
     res = yield counterAPI.putOne(action.payload.title);
-    yield put(actions.successfulAddOne({ payload: res.data }));
+    yield put(actions.success({ payload: res.data }));
+  } catch (err) {
+    console.error('error encountered in getting counters', err);
+  }
+}
+
+function* increment(action) {
+  let res;
+  try {
+    res = yield counterAPI.increment(action.payload);
+    yield put(actions.success({ payload: res.data }));
   } catch (err) {
     console.error('error encountered in getting counters', err);
   }
@@ -28,6 +38,7 @@ function* addACounter(action) {
 function* watchCounterAPIS() {
   yield takeEvery(constants.GET_COUNTERS, getCounters);
   yield takeEvery(constants.ADD_A_COUNTER, addACounter);
+  yield takeEvery(constants.INCREMENT, increment);
 }
 
 export default function* rootSaga() {

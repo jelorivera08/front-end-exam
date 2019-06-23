@@ -6,9 +6,9 @@ export const getCounters = () => {
   };
 };
 
-export const gotCounters = ({ payload }) => {
+export const success = ({ payload }) => {
   return {
-    type: constants.GOT_COUNTERS,
+    type: constants.SUCCESS,
     payload,
   };
 };
@@ -20,9 +20,9 @@ export const addACounter = (counter) => {
   };
 };
 
-export const successfulAddOne = ({ payload }) => {
+export const increment = (id) => {
   return {
-    type: constants.SUCCESSFULL_ADD_ONE,
-    payload,
+    type: constants.INCREMENT,
+    payload: id,
   };
 };
