@@ -1,7 +1,7 @@
 import React from 'react';
 
 const CounterTotal = ({ totalCount }) => {
-  return <div>{totalCount}</div>;
+  return <div> total : {totalCount}</div>;
 };
 
 export default CounterTotal;

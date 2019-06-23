@@ -12,3 +12,17 @@ export const gotCounters = ({ payload }) => {
     payload,
   };
 };
+
+export const addACounter = (counter) => {
+  return {
+    type: constants.ADD_A_COUNTER,
+    payload: counter,
+  };
+};
+
+export const successfulAddOne = ({ payload }) => {
+  return {
+    type: constants.SUCCESSFULL_ADD_ONE,
+    payload,
+  };
+};

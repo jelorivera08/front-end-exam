@@ -16,7 +16,7 @@ class API {
       getAll: () => axios.get(`${resourceURL}/counters`),
       putOne: (title) =>
         axios.post(
-          `${resourceURL}/counters`,
+          `${resourceURL}/counter`,
           {
             title,
           },
@@ -28,7 +28,7 @@ class API {
         ),
       increment: (id) =>
         axios.post(
-          `${resourceURL}/counters/inc`,
+          `${resourceURL}/counter/inc`,
           {
             id,
           },
@@ -40,7 +40,7 @@ class API {
         ),
       decrement: (id) =>
         axios.post(
-          `${resourceURL}/counters/inc`,
+          `${resourceURL}/counter/inc`,
           {
             id,
           },
@@ -52,7 +52,7 @@ class API {
         ),
       delete: (id) =>
         axios.delete(
-          `${resourceURL}/counters/inc`,
+          `${resourceURL}/counter/inc`,
           {
             id,
           },
