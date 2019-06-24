@@ -5,53 +5,53 @@ import createCounterAPI from '../api/counterApi';
 
 let counterAPI = createCounterAPI().endpoints.counter;
 
-function* getCounters() {
+export function* getCounters() {
   let res;
   try {
     res = yield counterAPI.getAll();
     yield put(actions.success({ payload: res.data }));
   } catch (err) {
-    console.error('error encountered in getting counters', err);
+    console.error('error encountered :', err);
   }
 }
 
-function* addACounter(action) {
+export function* addACounter(action) {
   let res;
   try {
     res = yield counterAPI.putOne(action.payload.title);
     yield put(actions.success({ payload: res.data }));
   } catch (err) {
-    console.error('error encountered in getting counters', err);
+    console.error('error encountered :', err);
   }
 }
 
-function* increment(action) {
+export function* increment(action) {
   let res;
   try {
     res = yield counterAPI.increment(action.payload);
     yield put(actions.success({ payload: res.data }));
   } catch (err) {
-    console.error('error encountered in getting counters', err);
+    console.error('error encountered :', err);
   }
 }
 
-function* decrement(action) {
+export function* decrement(action) {
   let res;
   try {
     res = yield counterAPI.decrement(action.payload);
     yield put(actions.success({ payload: res.data }));
   } catch (err) {
-    console.error('error encountered in getting counters', err);
+    console.error('error encountered :', err);
   }
 }
 
-function* deleteCounter(action) {
+export function* deleteCounter(action) {
   let res;
   try {
     res = yield counterAPI.delete(action.payload);
     yield put(actions.success({ payload: res.data }));
   } catch (err) {
-    console.error('error encountered in getting counters', err);
+    console.error('error encountered :', err);
   }
 }
 
