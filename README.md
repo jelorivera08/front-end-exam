@@ -4,6 +4,7 @@
 Run the following commands to start the app in dev
 1. npm install
 2. npm start
+3. go to http://localhost:3001 in the browser
 
 ## Production
 Run the following commands for the build package
