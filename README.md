@@ -7,13 +7,15 @@ Run the following commands to start the app in dev
 
 ## Production
 Run the following commands for the build package
-1 npm run build
+1. npm run build
 
 
 
 ## Testing
 Run the following commands to see the coverage of the unit testing
-1 npm run test -- --coverage
+1. npm run test -- --coverage
+
+
 > You can see a better UI of the testing by going to coverage -> lcov.report -> index.html (you open index.html on any browser)
 
 
