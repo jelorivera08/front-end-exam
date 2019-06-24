@@ -55,6 +55,8 @@ const mapDispatchToProps = (dispatch) => ({
   deleteCounter: (id) => dispatch(actions.deleteCounter(id)),
 });
 
+export { App };
+
 export default connect(
   mapStateToProps,
   mapDispatchToProps
