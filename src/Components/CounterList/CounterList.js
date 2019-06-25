@@ -17,12 +17,12 @@ const CounterList = ({
   return (
     <div className="counter-list-contaier">
       {counters.map((counter) => (
-        <div className="counter-list-unit" key={counter.id}>
+        <div className="counter-list-unit" key={counter._id}>
           <img
             className="counter-list-unit-del"
             src={del}
             alt="delete"
-            onClick={() => handleDeleteClick(counter.id)}
+            onClick={() => handleDeleteClick(counter._id)}
           />
           <div className="counter-list-unit-title">{counter.title}</div>
           <div className="counter-list-unit-func">
@@ -30,14 +30,14 @@ const CounterList = ({
               className="counter-list-unit-dec"
               src={dec}
               alt="decrement"
-              onClick={() => handleDecrementClick(counter.id)}
+              onClick={() => handleDecrementClick(counter._id)}
             />
             <div>{counter.count}</div>
             <img
               className="counter-list-unit-inc"
               src={inc}
               alt="increment"
-              onClick={() => handleIncrementClick(counter.id)}
+              onClick={() => handleIncrementClick(counter._id)}
             />
           </div>
         </div>
